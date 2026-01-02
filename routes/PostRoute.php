@@ -22,13 +22,13 @@ if (!empty($segments[1])) {
 
 
 
-// در این مبخش روتر های خود را تنظیم میکنید و کنترولر مربوطه ویو مربوطه را معرفی میکنید
+// در این بخش روتر های خود را تنظیم میکنید و کنترولر مربوطه و ویو مربوطه را معرفی میکنید
 public function create () {
     require_once 'controllers/create.php';
 }
 
 public function update(){
-    // ذخیره میشود ومیتونید اون رو بریزید در داخل متغیر و از هر خونه اش استفاده کنید $this->request رو url تمام داده های رو 
+    // ذخیره میشود ومیتونید اون رو بریزید در داخل متغیر و از هر خونه اش استفاده کنید $this->request رو url تمام داده های روی
     $request=$this->request;
     $id=$request[0];
     require_once 'controllers/update.php';

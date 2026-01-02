@@ -67,8 +67,8 @@ foreach ($routes as $route) {
 
 $project=self::project;
         switch ($requesturl) {
-            //مخصوص اش صدا میزنیم و روتر مخصوص به اون روت رو بهش معرفی می کنیم همون برای مثال همون فایلی که بغل فایل فعلی هست $project.self::$varibel هر روت رو با 
-            // باشد unique  لازم به ذکر است که همه  ی متد ها باید 
+            //  مخصوص اش صدا میزنیم و روتر مخصوص به اون روت رو بهش معرفی می کنیم  برای مثال روتر ها همون فایلی که بغل فایل فعلی هست رو نگاه کنید $project.self::$varibel هر روت رو با 
+            // باشد unique  لازم به ذکر است که همه  ی متد های روتر باید 
             case $project.self::$createposturl:
                  $this->create();
                 break;
