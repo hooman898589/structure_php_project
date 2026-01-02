@@ -1,0 +1,16 @@
+{
+    "name": "hooman/laravelpro_php",
+    "type": "composer-plugin",
+    "autoload": {
+        "psr-4": {
+            "routes\\":"routes/",
+            "Conn\\":"helpers/"
+        }
+    },
+    "authors": [
+        {
+            "name": "hooman"
+        }
+    ],
+    "require": {}
+}

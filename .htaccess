@@ -1,0 +1,21 @@
+
+# فعال‌سازی Rewrite
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # اگر پروژه در ساب‌فولدره، این رو به مسیر درست تغییر بده (مثلاً /myapp/)
+  RewriteBase /basename/
+
+  # فایل‌ها و فولدرهای واقعی رو سرو کن
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # هر روت دیگه به index.php پاس داده بشه
+  RewriteRule ^ index.php [L]
+</IfModule>
+
+# امنیت پایه
+<FilesMatch "\.(env|ini|log|bak|sql)$">
+  Require all denied
+</FilesMatch>
