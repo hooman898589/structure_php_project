@@ -4,7 +4,7 @@
   RewriteEngine On
 
   # اگر پروژه در ساب‌فولدره، این رو به مسیر درست تغییر بده (مثلاً /myapp/)
-  RewriteBase /basename/
+  RewriteBase /laravelpro_php/
 
   # فایل‌ها و فولدرهای واقعی رو سرو کن
   RewriteCond %{REQUEST_FILENAME} -f [OR]

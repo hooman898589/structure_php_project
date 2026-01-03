@@ -1,20 +1,24 @@
 <?php
 namespace routes;
+include "textroute.php";
 use routes\PostRoute;
+use routes\testroute;
 
 
 class web{
     // تعریف اسم پروژه اصلی
-    public const project = 'base/';
+    public const project = 'laravelpro_php/';
     // روت ها مون رو تعریف میکنیم
     public static $createposturl = 'post/create';
     public static $updateposturl = 'post/update';
     public static $deleteposturl = 'post/delete';
     public static $selectposturl = 'post/';
+    public static $testupdateurl = 'test/update';
     
 
 
     use PostRoute;
+    use testroute;
     public function __construct()  {
         $url = trim($_SERVER['REQUEST_URI'], '/');
         
@@ -23,7 +27,8 @@ class web{
             ['url'=>'post/create'],
             ['url'=> 'post/update'],
             ['url'=>'post/delete'],
-            ['url'=> 'post/']
+            ['url'=> 'post/'],
+            ['url'=>'test/update']
             
         ];
 
@@ -63,6 +68,7 @@ foreach ($routes as $route) {
 
 
   $this->set_url($requesturl);
+  $this->set_test_url($requesturl);
 
 
 $project=self::project;
@@ -81,7 +87,9 @@ $project=self::project;
                 $this->destroy();
             case $project.self::$selectposturl:
                 $this->select();
-                
+            case $project.self::$testupdateurl:
+                $this->testupdate();
+                break;    
                 break;
     
             default:
