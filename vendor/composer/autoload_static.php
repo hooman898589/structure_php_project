@@ -11,6 +11,10 @@ class ComposerStaticInit733c8b6432db087e4004b78628f8a2fb
         array (
             'routes\\' => 7,
         ),
+        'M' => 
+        array (
+            'Model\\' => 6,
+        ),
         'C' => 
         array (
             'Conn\\' => 5,
@@ -21,6 +25,10 @@ class ComposerStaticInit733c8b6432db087e4004b78628f8a2fb
         'routes\\' => 
         array (
             0 => __DIR__ . '/../..' . '/routes',
+        ),
+        'Model\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/model',
         ),
         'Conn\\' => 
         array (

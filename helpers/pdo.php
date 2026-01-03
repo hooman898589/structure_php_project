@@ -7,7 +7,7 @@ class pdo {
     public function __construct() {
         try {
             $this->connection = new \PDO(
-                "mysql:host=localhost;dbname=databasename;charset=utf8",
+                "mysql:host=localhost;dbname=laravelpro_app;charset=utf8",
                 "root",
                 "",
                 [

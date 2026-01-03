@@ -4,7 +4,8 @@
     "autoload": {
         "psr-4": {
             "routes\\":"routes/",
-            "Conn\\":"helpers/"
+            "Conn\\":"helpers/",
+            "Model\\":"model/"
         }
     },
     "authors": [
