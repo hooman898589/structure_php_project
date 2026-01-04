@@ -22,7 +22,7 @@ if (!empty($segments[1])) {
 
 
 
-public function testupdate(){
+public  function testupdate(){
     // ذخیره میشود ومیتونید اون رو بریزید در داخل متغیر و از هر خونه اش استفاده کنید $this->request رو url تمام داده های روی
     $request=$this->request;
     $id=$request[0];

@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "php_structer",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

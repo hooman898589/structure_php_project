@@ -2,7 +2,7 @@
 
 <?php
 // برای مثال
-require_once 'vendor/autoload.php';
+require_once '../vendor/autoload.php';
 use Conn\pdo;
 
 $conn = new pdo();

@@ -9,26 +9,21 @@ class web{
     // تعریف اسم پروژه اصلی
     public const project = 'laravelpro_php/';
     // روت ها مون رو تعریف میکنیم
-    public static $createposturl = 'post/create';
-    public static $updateposturl = 'post/update';
-    public static $deleteposturl = 'post/delete';
-    public static $selectposturl = 'post/';
-    public static $testupdateurl = 'test/update';
-    
 
+    
 
     use PostRoute;
     use testroute;
     public function __construct()  {
         $url = trim($_SERVER['REQUEST_URI'], '/');
-        
+        $method=$_SERVER['REQUEST_METHOD'];
     //  روت ها رو یه بار دیگه همین اینحا تعریف می کنیم
    $routes=[
-            ['url'=>'post/create'],
-            ['url'=> 'post/update'],
-            ['url'=>'post/delete'],
-            ['url'=> 'post/'],
-            ['url'=>'test/update']
+            ['url'=>'post/create','callback'=> "create",'method'=>"POST"],
+            ['url'=> 'post/update','callback'=>"update",'method'=>"POST"],
+            ['url'=>'post/delete', "callback"=> "destroy",'method'=>"POST"],
+            ['url'=> 'post',    'callback'=>  "select",'method'=>"GET"],
+            ['url'=>'test/update' , "callback" => "testupdate",'method'=>"POST"]
             
         ];
 
@@ -44,11 +39,10 @@ foreach ($routes as $route) {
       
     if ($url==$requesturl) {
         break;
+    }else {
+        $requesturl='';
     }
 }
-
-
-
 
 
 
@@ -72,31 +66,23 @@ foreach ($routes as $route) {
 
 
 $project=self::project;
-        switch ($requesturl) {
-            //  مخصوص اش صدا میزنیم و روتر مخصوص به اون روت رو بهش معرفی می کنیم  برای مثال روتر ها همون فایلی که بغل فایل فعلی هست رو نگاه کنید $project.self::$varibel هر روت رو با 
-            // باشد unique  لازم به ذکر است که همه  ی متد های روتر باید 
-            case $project.self::$createposturl:
-                 $this->create();
-                break;
-            case $project.self::$updateposturl:
-                $this->update();
-            case $project.self::$deleteposturl:
-                $this->destroy();
-                break;    
-            case $project.self::$deleteposturl:
-                $this->destroy();
-            case $project.self::$selectposturl:
-                $this->select();
-            case $project.self::$testupdateurl:
-                $this->testupdate();
-                break;    
-                break;
-    
-            default:
-                
-                break;
-        }
         
+foreach ($routes as $route) {
+    if ($requesturl === $project . $route['url']) {
+        if ($method==$route['method']) {
+
+        $callback=$route['callback'];
+        $this->$callback();
+                    # code...
+     
+        exit;
+        }
+    }
+}
+
+   include '404.php';
+
+
     }
  
 

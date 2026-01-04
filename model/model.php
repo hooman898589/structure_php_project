@@ -16,7 +16,7 @@ trait crud {
         
     }
 
-    public  function create($data) {
+    public   function create($data) {
     
         $fields = implode(",", array_values($this->filable));
      
